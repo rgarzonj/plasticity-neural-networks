@@ -5,6 +5,10 @@ Created on Sat Sep 15 21:28:05 2018
 
 @author: rgarzon
 """
+"LSTM model implementation of an algorithm that
+"counts the number of 1's in a sequence of 0's and 1's
+"
+
 import tensorflow as tf
 
 from BinaryPatterns import BinaryPatterns
@@ -17,10 +21,10 @@ batch_size = 128
 display_step = 200
 
 # Network Parameters
-num_input = 1 # MNIST data input (img shape: 28*28)
-timesteps = 5 # timesteps
+num_input = 1 # Every item in the sequence is a single digit, 0 or 1
+timesteps = 5 # timesteps (length of the sequence)
 num_hidden = 64 # hidden layer num of features
-num_classes = timesteps+1 # MNIST total classes (0-9 digits)
+num_classes = timesteps+1 # if there is a sequence of 5 digits, the output can be 0 1 2 3 4 5  (5+1 classes)
 
 class LSMTModel():
 
